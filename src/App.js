@@ -1,19 +1,19 @@
 import * as LocalApi from './services/localApi'
-import SearchBar from './components/SearchBar';
+import Search from './components/Search';
 import './App.css'
 import React, { useState, useEffect } from 'react';
 
 function App() {
-  const [people, setPeople] = useState();
+  const [products, setProducts] = useState();
   useEffect(() => {
-    let promise = LocalApi.getPeople();
-    Promise.resolve(promise).then(People => {
-      setPeople(People)
+    let promise = LocalApi.getProducts();
+    Promise.resolve(promise).then(products => {
+      setProducts(products)
     })
   }, [])
   return (
     <div className="MainPage">
-      <SearchBar lookUpData={people} maxElement={4}></SearchBar>
+      <Search lookUpData={products} maxElement={4}></Search>
     </div>
   );
 }

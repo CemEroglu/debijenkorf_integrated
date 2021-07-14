@@ -1,16 +1,11 @@
-.SearchBar{
-    /* border-radius: 50px; */
-    border-right: 0px!important;
-    border-bottom-right-radius: 0px;
-    border-top-right-radius: 0px;
+.SearchInput{
     border: 0px !important;
-    border: 1px solid black;
     box-shadow: none !important;
     margin-top: 3px;
     width: 100%;
     padding: 3px;
 }
-.SearchBar:focus{
+.SearchInput:focus{
     outline: none;
 }
 .Icon{
@@ -28,7 +23,7 @@
 .Hide{
     visibility: hidden;
 }
-.Parent{
+.SearchBar{
     position: relative;
     display: flex;
     width: 100%;
@@ -45,7 +40,6 @@
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     width: 100%;
-    /* border-bottom: 1px solid gray; */
 }
 .ListElement{
     border-bottom: 1px solid gray;
