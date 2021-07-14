@@ -1,5 +1,6 @@
 import * as LocalApi from './services/localApi'
 import SearchBar from './components/SearchBar';
+import './App.css'
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     })
   }, [])
   return (
-    <div>
+    <div className="MainPage">
       <SearchBar lookUpData={people} maxElement={4}></SearchBar>
     </div>
   );
