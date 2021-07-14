@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import * as LocalApi from './services/localApi'
+import SearchBar from './components/SearchBar';
+import React, {useState, useEffect} from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <div>
-          <h2>Hello world</h2>
-        </div>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+function App() {
+  const [people, setPeople] = useState();
+  useEffect(() => {
+    let promise= LocalApi.getPeople();
+    Promise.resolve(promise).then(People=>{
+      setPeople(People)})
+  }, [])
+  return (
+    <div>
+      <SearchBar lookUpData={people} maxElement={4}></SearchBar>
+    </div>
+  );
 }
 
 export default App;
