@@ -23,21 +23,22 @@ function SearchBar(props) {
         setSearchText(e.target.value)
     }
     return (
-        <div className="GrandParent">
+        <div className="Container">
             <div className="Parent">
                 <input value={searchText} onChange={whenInputChange} className="SearchBar" />
-                <button className="Icon Magnifier">
-                    <img
-                        src={search}
-                        alt="srch"
-                    />
-                </button>
+                
                 <button className={searchText ? "Icon Close" : "Icon Close Hide"} onClick={() => {
                     setSearchText("")
                 }}>
                     <img
                         src={close}
                         alt="del"
+                    />
+                </button>
+                <button className="Icon Magnifier">
+                    <img
+                        src={search}
+                        alt="srch"
                     />
                 </button>
             </div>
