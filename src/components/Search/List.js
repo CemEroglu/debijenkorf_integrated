@@ -19,6 +19,9 @@ function List(props) {
                         id={item.nrResults}
                     ></ListElement>
                 }
+                else{
+                    return ""
+                }
             })}
         </div>
     );

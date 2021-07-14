@@ -10,8 +10,8 @@ function Search(props) {
 
     useEffect(() => {
         let newFilteredData = []
-        if (searchText) {
-            props.lookUpData.suggestions.map(item => {
+        if (searchText && props.lookUpData.suggestions) {
+            props.lookUpData.suggestions.forEach(item => {
                 if (item.searchterm.toLowerCase().includes(searchText.toLowerCase())) {
                     newFilteredData.push(item)
                 }
